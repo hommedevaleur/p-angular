@@ -1,0 +1,62 @@
+<div class="h100">
+    <div class="row h-100 bg-white">
+        <div class="col-7 hero">
+        </div>
+        <div class="col-5 d-flex justify-content-center align-items-center">
+
+            <form name="form" #f="ngForm">
+                <div class="text-center">
+                    <img src="../../assets/ricva.PNG" alt="">
+                </div>
+
+                <p class="titre text-marron text-center">Spéculations</p>
+                <div>
+                    <div class="my-2">
+                        <button class="btn btn-outline-dark rounded-pill position-relative me-2" type="button">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8026/8026083.png" alt="" class="img-btn">
+                            Cajou
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge bg-success p-1 rounded-circle">
+                                <i class="bi bi-check m-0 p-0"></i>
+                            </span>
+                        </button>
+                        <button class="btn btn-outline-dark rounded-pill  me-2">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2166/2166156.png" alt="" class="img-btn">
+                            Cacao
+                        </button>
+                        <button class="btn btn-outline-dark rounded-pill  me-2">
+                            <img src="https://cdn-icons-png.flaticon.com/512/616/616707.png" alt="" class="img-btn">
+                            Hevea
+                        </button>
+                        <button class="btn btn-outline-dark rounded-pill  me-2">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4264/4264812.png" alt="" class="img-btn">
+                            Karite
+                        </button>
+                    </div>
+                </div>
+                <p class="titre text-marron text-center">Connexion</p>
+                <div class="form-group mb-2">
+                    <label htmlFor="">Email ou telephone</label>
+                    <input type="text" class="form-control" id="email" name="email" [(ngModel)]="form.email"
+                        #email="ngModel" />
+                </div>
+                <div class="form-group mb-2">
+                    <label htmlFor="">Mot de passe</label>
+                    <input type="password" class="form-control" id="password" name="password"
+                        [(ngModel)]="form.password" #password="ngModel" />
+                </div>
+                <div class="form-group text-center">
+                    <button class="btn btn-primary" (click)="onValidation()">Connexion</button>
+                </div>
+                <div class="mt-5 text-center">
+                    <p>Vous avez oublié votre mot de passe?<br />
+                        <strong>Réinitialiser votre mot de pase</strong>
+                    </p>
+                </div>
+
+
+            </form>
+        </div>
+
+    </div>
+</div>

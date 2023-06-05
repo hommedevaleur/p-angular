@@ -1,0 +1,140 @@
+<div class="mt-2 h100">
+    <div class="container-fluid d-flex justify-content-between">
+        <div class="my-2">
+            <button class="btn btn-outline-dark rounded-pill position-relative me-2" type="button">
+                <img src="https://cdn-icons-png.flaticon.com/512/8026/8026083.png" alt="" class="img-btn">
+                Cajou
+                <span class="position-absolute top-0 start-100 translate-middle badge bg-success p-1 rounded-circle">
+                    <i class="bi bi-check m-0 p-0"></i>
+                </span>
+            </button>
+            <button class="btn btn-outline-dark rounded-pill  me-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/2166/2166156.png" alt="" class="img-btn">
+                Cacao
+            </button>
+            <button class="btn btn-outline-dark rounded-pill  me-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616707.png" alt="" class="img-btn">
+                Hevea
+            </button>
+            <button class="btn btn-outline-dark rounded-pill  me-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/4264/4264812.png" alt="" class="img-btn">
+                Karite
+            </button>
+        </div>
+        <div class="d-flex">
+            <div class="col px-1">
+                <button class="btn btn-primary bg-blue shadow d-flex">
+                    <i class="bi bi-bell"></i>
+                    12
+                </button>
+            </div>
+
+            <div class="col p-0 d-flex align-items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/940/940188.png" alt="" height="20px">
+                <i class="bi bi-chevron-down"></i>
+            </div>
+
+            <div class="col-8 p-0">
+                <select name="" id="" class="form-select">
+                    <option value="">CAP SIKAN</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-fluid d-flex justify-content-between">
+        <div>
+            <p class="text-muted">Tableau de bord <i class="bi bi-chevron-right"></i> Administration</p>
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="onEntrepot()">Créer un entrepot</button>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-3">
+                <!-- <Sidebar_ /> -->
+                <div class="bg-light h80 rounded">
+                    <ul class="list-group">
+                        <li *ngFor="let m of menu"
+                            class="list-group-item d-flex justify-content-between align-items-start sidebar-item_"
+                            [ngClass]="{active_: m.title==='Entrepot'}">
+                            <div class="ms-2 me-auto ">
+                                <div class="fw-bold">{{m.title}}</div>
+                            </div>
+                            <span class="badge text-black"
+                                [ngClass]="{'text-marron': m.title==='Entrepot'}">{{m.val}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-9 h80 bg-white rounded p-3">
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <div class="titre text-marron">Historique entrepot</div>
+                        <div>
+                            <!-- Actual search box -->
+                            <div class="form-group has-search">
+                                <span class="bi bi-search form-control-feedback"></span>
+                                <input type="text" class="form-control" placeholder="Recherche">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Libelle</td>
+                                    <td>Superficie(m2)</td>
+                                    <td>Placer</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr *ngFor="let e of entrepots">
+                                    <td>{{e.libelle}}</td>
+                                    <td>{{e.superficie}}</td>
+                                    <td>{{e.placer}}</td>
+                                    <td><button class="btn btn-primary"><i class="bi bi-trash"></i></button>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <h3>Voulez-vous enregistrer ?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto tenetur sed quaerat. Aliquam enim
+                    blanditiis, aspernatur dolores repellendus vitae rem, distinctio velit neque voluptate placeat
+                    perferendis molestiae temporibus obcaecati aliquid!</p>
+                <div>
+                    <button class="btn btn-danger mx-2">
+                        Non
+                    </button>
+                    <button class="btn btn-success">
+                        Oui
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
